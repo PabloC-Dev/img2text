@@ -8,5 +8,5 @@ echo Finalizado..
 pause
 cd dist/Debug
 cls
-i2t.exe windows.ico
-notepad windows.ico_formateado.txt
+i2t.exe windows.ico .ico win_ico_formateado.txt win_ico_arr
+notepad win_ico_formateado.txt
