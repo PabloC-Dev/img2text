@@ -8,26 +8,29 @@
 #include <stdio.h> // salidas estandar del sistema 
 #include <stdlib.h> // funciones system del sistema
 #include <string.h>
+#include <conio.h>
 
 // inicio del programa
 
 int main(int argc, char * argv[])
 {
-	system("title Mi primer programa de consola en C");
+	system("title Formatear archivo a array int en C");
 	
 	
 	char nombre_img[100];
 	if (argv[1]==NULL){
 		printf("debe ingresar el nombre del archivo con la extenci\242n, ej. imagen.jpg");
-		system("pause>nul");
+		getch();
 		exit(-1);
 	}
 	else strcpy(nombre_img,argv[1]);
 	
-	FILE* lee_img, crea_txt;
-
+	FILE* lee_img;
+	FILE* crea_txt;
+	strcat(nombre_img,"_formateado.txt");
+	crea_txt = fopen(nombre_img,"w");
 	
 	puts(nombre_img);
-	system("pause>nul");
+	getch();
 	return 0;
 }
