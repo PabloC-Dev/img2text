@@ -55,7 +55,7 @@ int main(int argc, char * argv[])
 		//fwrite(hex,sizeof(int),1,crea_txt);
 		
 		// 3° forma
-		fprintf(crea_txt,"%X",valor);
+		fprintf(crea_txt,"0x%08X",valor);
 		
 		//fputc('"',crea_txt);
 		
@@ -64,7 +64,15 @@ int main(int argc, char * argv[])
 		if((contador % 16) == 0) fputc('\n',crea_txt);
 		
 	}
-	fputs("};",crea_txt);
+	fputs("};\n",crea_txt);
+	char cantidad[50];
+	strcpy(cantidad,"int cantidad = ");
+	char cont_s[11];
+	itoa(contador,cont_s,10);
+	strcat(cantidad,cont_s);
+	strcat(cantidad,";\n");
+	fputs(cantidad,crea_txt);
+
 	puts(nombre_img_ftm);
 	fclose(lee_img);
 	fclose(crea_txt);
