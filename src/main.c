@@ -17,9 +17,15 @@ int main(int argc, char * argv[])
 	
 	
 	char nombre_img[100];
-	if (argv[1]==NULL)strcpy(nombre_img,"vacio");
+	if (argv[1]==NULL){
+		printf("debe ingresar el nombre del archivo con la extenci\242n, ej. imagen.jpg");
+		system("pause>nul");
+		exit(-1);
+	}
 	else strcpy(nombre_img,argv[1]);
 	
+	FILE* lee_img, crea_txt;
+
 	
 	puts(nombre_img);
 	system("pause>nul");
