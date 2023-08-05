@@ -7,13 +7,21 @@
 
 #include <stdio.h> // salidas estandar del sistema 
 #include <stdlib.h> // funciones system del sistema
+#include <string.h>
 
 // inicio del programa
 
 int main(int argc, char * argv[])
 {
 	system("title Mi primer programa de consola en C");
-	printf("Hola mundo...");
+	
+	
+	char nombre_img[100];
+	if (argv[1]==NULL)strcpy(nombre_img,"vacio");
+	else strcpy(nombre_img,argv[1]);
+	
+	
+	puts(nombre_img);
 	system("pause>nul");
 	return 0;
 }
